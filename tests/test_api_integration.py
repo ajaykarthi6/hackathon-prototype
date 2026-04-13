@@ -8,6 +8,9 @@ client = TestClient(app)
 def test_query_endpoint_returns_expected_structure() -> None:
     response = client.post("/query", json={"prompt": "Tell me about Mars"})
     assert response.status_code == 200
-    data = response.json()["data"]
-    assert data["prompt"] == "Tell me about Mars"
-    assert "response" in data
+    payload = response.json()
+    assert payload["status"] == "success"
+    data = payload["data"]
+    assert data["planet"] == "Mars"
+    assert data["summary"].startswith("Mars, often called")
+    assert data["metrics"]["diameter_km"] == 6779

@@ -9,4 +9,4 @@ app = FastAPI(title="Interstellar Agent ADK")
 @app.post("/query", response_model=QueryResponse)
 def query_agent(payload: QueryRequest) -> QueryResponse:
     result = build_response(payload.prompt)
-    return {"data": result}
+    return {"status": "success", "data": result}

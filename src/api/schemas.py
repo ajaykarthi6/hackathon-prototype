@@ -1,3 +1,5 @@
+from typing import Any
+
 from pydantic import BaseModel
 
 
@@ -6,4 +8,5 @@ class QueryRequest(BaseModel):
 
 
 class QueryResponse(BaseModel):
-    data: dict
+    status: str
+    data: dict[str, Any]
