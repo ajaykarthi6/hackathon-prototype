@@ -2,14 +2,73 @@
 
 A GitHub-ready Python project scaffold for an interstellar education agent. This repository includes a minimal FastAPI backend with a web UI, test coverage, CI/CD workflows, Docker packaging, and Terraform deployment placeholders.
 
-## Features
+## Project Overview
 
-- FastAPI-based HTTP API with a `/query` endpoint and web UI at `/`
-- Dynamic planetary data for Mars, Venus, and Jupiter
-- Unit and integration test examples with `pytest`
-- GitHub Actions workflows for CI and deployment
-- Dockerfile for containerization
-- Terraform placeholders for cloud infrastructure
+The **Interstellar Agent ADK (Agent Development Kit)** is an innovative educational platform designed to provide interactive, AI-powered insights about our solar system's planets. Built as a hackathon prototype, this project demonstrates modern web development practices, API design, and deployment automation.
+
+### Core Concept
+Imagine an intelligent agent that travels through space, collecting and sharing knowledge about celestial bodies. The Interstellar Agent acts as your personal guide to planetary science, offering detailed information about Mars, Venus, Jupiter, and potentially other planets in our solar system.
+
+### Key Components
+
+#### 🤖 Agent Logic (`src/agent/`)
+- **Dynamic Response System**: Matches user queries to planetary data using intelligent keyword detection
+- **Extensible Data Model**: Planet information stored in structured dictionaries for easy expansion
+- **Prompt Engineering**: Configurable system prompts to maintain educational focus
+
+#### 🌐 Web Interface (`templates/`)
+- **User-Friendly UI**: Clean, responsive HTML interface with real-time query responses
+- **No-Code Interaction**: Users can explore planetary data without technical knowledge
+- **Visual Feedback**: Styled responses with proper formatting for data presentation
+
+#### 🔌 API Layer (`src/api/`)
+- **RESTful Endpoints**: JSON API for programmatic access (`/query`)
+- **Web Form Handling**: HTML form processing (`/web-query`) for seamless integration
+- **FastAPI Framework**: High-performance async web framework with automatic OpenAPI docs
+
+#### 🧪 Testing Suite (`tests/`)
+- **Unit Tests**: Validate agent logic for each planet
+- **Integration Tests**: Ensure API endpoints work correctly
+- **Comprehensive Coverage**: Tests for known planets and unknown queries
+
+#### 🚀 DevOps & Deployment
+- **CI/CD Pipelines**: Automated testing and deployment via GitHub Actions
+- **Containerization**: Docker support for consistent environments
+- **Infrastructure as Code**: Terraform templates for cloud deployment
+- **Environment Management**: Configurable settings via environment variables
+
+### Technical Architecture
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Web Browser   │────│   FastAPI App   │────│   Agent Logic   │
+│                 │    │                 │    │                 │
+│  HTML Interface │    │  /query (JSON)  │    │ Planetary Data  │
+│  Form Submission│    │ /web-query (HTML│    │ Response Builder│
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         └───────────────────────┼───────────────────────┘
+                                 │
+                    ┌─────────────────┐
+                    │   Planet Data   │
+                    │   Dictionary    │
+                    └─────────────────┘
+```
+
+### Educational Value
+This project serves as both a functional tool and a learning resource:
+- **API Design**: Demonstrates RESTful API best practices
+- **Web Development**: Shows integration of backend and frontend
+- **Testing**: Illustrates comprehensive test coverage
+- **DevOps**: Provides examples of CI/CD and containerization
+- **Python Best Practices**: Clean code structure and modern libraries
+
+### Future Enhancements
+- Integration with real astronomical APIs (NASA, ESA)
+- AI-powered natural language processing for complex queries
+- Interactive visualizations and 3D models
+- Multi-language support
+- User authentication and personalized learning paths
 
 ## Features
 
