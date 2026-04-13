@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interstellar Agent ADK</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f0f0f0; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        form { margin-bottom: 20px; }
+        input[type="text"] { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        .response { margin-top: 20px; padding: 10px; background-color: #e9f7ef; border-left: 5px solid #4CAF50; }
+        .error { background-color: #f8d7da; border-left-color: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌌 Interstellar Agent ADK</h1>
+        <p>Ask me about planets in our solar system!</p>
+        <form action="/web-query" method="post">
+            <input type="text" name="prompt" placeholder="e.g., Tell me about Mars" required>
+            <button type="submit">Query</button>
+        </form>
+        {% if response %}
+        <div class="response{% if response.get('error') %} error{% endif %}">
+            <h3>Response:</h3>
+            <pre>{{ response | tojson(indent=2) }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

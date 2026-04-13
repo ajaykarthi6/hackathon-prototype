@@ -1,15 +1,24 @@
 # Interstellar Agent ADK
 
-A GitHub-ready Python project scaffold for an interstellar education agent. This repository includes a minimal FastAPI backend, test coverage, CI/CD workflows, Docker packaging, and Terraform deployment placeholders.
+A GitHub-ready Python project scaffold for an interstellar education agent. This repository includes a minimal FastAPI backend with a web UI, test coverage, CI/CD workflows, Docker packaging, and Terraform deployment placeholders.
 
 ## Features
 
-- FastAPI-based HTTP API with a `/query` endpoint
-- Basic agent logic and prompt configuration
+- FastAPI-based HTTP API with a `/query` endpoint and web UI at `/`
+- Dynamic planetary data for Mars, Venus, and Jupiter
 - Unit and integration test examples with `pytest`
 - GitHub Actions workflows for CI and deployment
 - Dockerfile for containerization
 - Terraform placeholders for cloud infrastructure
+
+## Features
+
+- **Multi-Planet Support**: Ask about Mars, Venus, or Jupiter for detailed responses.
+- **Web Interface**: Interactive web UI for easy querying.
+- **API Endpoints**: JSON API for programmatic access.
+- **Comprehensive Testing**: Unit and integration tests.
+- **CI/CD Ready**: Automated testing and deployment pipelines.
+- **Containerized**: Docker support for easy deployment.
 
 ## Repository structure
 
@@ -38,7 +47,7 @@ pip install -r requirements.txt
 uvicorn src.api.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-Then visit `http://localhost:8000/docs` for the OpenAPI UI.
+Then visit `http://localhost:8000` for the web UI or `http://localhost:8000/docs` for the OpenAPI UI.
 
 ### Example request
 
@@ -47,6 +56,8 @@ curl -X POST http://localhost:8000/query \
   -H "Content-Type: application/json" \
   -d '{"prompt": "Tell me about Mars"}'
 ```
+
+Or use the web interface at `http://localhost:8000`.
 
 ## Run tests
 
